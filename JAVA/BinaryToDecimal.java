@@ -3,6 +3,14 @@ public class BinaryToDecimal {
         String input = args[0];
         int output = 0;
         int[] binary = new int[input.length()];
+        
+        //Binary check
+        for (int i = 0; i < input.length(); i++) {
+            if (input.charAt(i) != '0' && input.charAt(i) != '1') {
+                throw new RuntimeException("ERROR: Not a binary number");
+            }
+        }
+        
         for (int i = 0; i < input.length(); i++) {
             if (i == input.length() - 1) {
                 binary[i] = Integer.parseInt(input.substring(i));
